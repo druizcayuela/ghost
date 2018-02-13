@@ -45,7 +45,7 @@ public class AlphaBetaPruningVisitor implements TreeVisitor {
         maxValue(N_INFINITY, P_INFINITY, ALLOWED_DEPTH, node);
     }
 
-    public int maxValue(int alpha, int beta, int depth, Node node) {
+    private int maxValue(int alpha, int beta, int depth, Node node) {
         if (node.isLeaf()){
             return heuristic(node);
         }
@@ -76,7 +76,7 @@ public class AlphaBetaPruningVisitor implements TreeVisitor {
         return value;
     }
 
-    public int minValue(int alpha, int beta, int depth, Node node) {
+    private int minValue(int alpha, int beta, int depth, Node node) {
         if (node.isLeaf())
             return heuristic(node);
 
@@ -105,6 +105,12 @@ public class AlphaBetaPruningVisitor implements TreeVisitor {
         return defeatFinalNode;
     }
 
+    /**
+     * My Heuristic function to Alpha-Beta Prunning
+     *
+     * @param node to check heuristic
+     * @return
+     */
     public int heuristic(Node node) {
         int value = 0;
 

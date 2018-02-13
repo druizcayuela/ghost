@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -46,6 +45,11 @@ public class FileUtils {
         wordList = null;
     }
 
+    /**
+     * Return the list of the words from the dictionary
+     *
+     * @return List<String>
+     */
     public List<String> readWordList() {
         List<String> words = new ArrayList<String>();
         BufferedReader bufferedReader = null;

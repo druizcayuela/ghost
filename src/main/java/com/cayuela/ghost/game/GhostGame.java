@@ -51,7 +51,7 @@ public class GhostGame implements Serializable{
         return currentNode;
     }
 
-    private void playHumanPlayer(Character playedLetter) {
+    public void playHumanPlayer(Character playedLetter) {
         if (gameOver()) {
             return;
         }
@@ -59,7 +59,7 @@ public class GhostGame implements Serializable{
         updateCurrentNodeAfterPlay(Player.HUMAN, playedLetter);
     }
 
-    private void playBestForTheComputer() {
+    public void playBestForTheComputer() {
         if (gameOver()) {
             return;
         }

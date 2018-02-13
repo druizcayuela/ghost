@@ -17,7 +17,31 @@ public class GhostGameTest {
 
 
     /**
-     * Test case to check if read the whole txt
+     * Test case to test if the game is over
+     */
+    @Test
+    public void gameOverTest() {
+        GhostGame ghostGame = new GhostGame();
+        ghostGame.playAgainstComputer('e');
+        ghostGame.playAgainstComputer('z');
+        ghostGame.playAgainstComputer('d');
+        ghostGame.playAgainstComputer('a');
+        ghostGame.playAgainstComputer('a');
+        Assert.assertTrue(ghostGame.gameOver());
+    }
+
+    /**
+     * Test case to test if the game is not over
+     */
+    @Test
+    public void gameOverFalseTest() {
+        GhostGame ghostGame = new GhostGame();
+        ghostGame.playAgainstComputer('p');
+        Assert.assertFalse(ghostGame.gameOver());
+    }
+
+    /**
+     * Test case to do a play will win the player human
      */
     @Test
     public void playInOrderToHumanWinTest() {
@@ -31,8 +55,10 @@ public class GhostGameTest {
         Assert.assertEquals(Player.HUMAN, lastNode.getAimToThePlayer());
     }
 
+
+
     /**
-     * Test case to check if read the whole txt
+     * Test case to do a play will win the player computer
      */
     @Test
     public void playInOrderToComputerWinTest() {
@@ -45,6 +71,9 @@ public class GhostGameTest {
         Assert.assertEquals(Player.COMPUTER, lastNode.getAimToThePlayer());
     }
 
+    /**
+     * Test a illegal argument like a number
+     */
     @Test(expected = IllegalPlayException.class)
     public void playFallibleHumanOptionTest() {
         GhostGame ghostGameNWords = new GhostGame();

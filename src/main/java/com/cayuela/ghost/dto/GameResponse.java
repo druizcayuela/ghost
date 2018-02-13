@@ -18,8 +18,6 @@ public class GameResponse {
     private String message = "";
     private Character play = null;
 
-    public GameResponse() { }
-
     public GameResponse(String string, String message) {
         this.string = string;
         this.message = message;

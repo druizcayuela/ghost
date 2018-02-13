@@ -14,6 +14,12 @@ public enum Player {
 
     HUMAN, COMPUTER;
 
+    /**
+     * Return the next player.
+     *
+     * @param player the player
+     * @return
+     */
     public static Player getNextPlayer(Player player) {
         if (player == null) {
             return Player.HUMAN;

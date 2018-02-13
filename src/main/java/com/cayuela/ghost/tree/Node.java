@@ -78,6 +78,11 @@ public class Node implements Serializable {
         return winnerChildren;
     }
 
+    /**
+     * Get the player who play this node.
+     *
+     * @return the Player
+     */
     public Player whoPlaysThisNode() {
         if (getNodeValue() == null || getNodeValue().length() == 0) {
             return null;
@@ -86,6 +91,12 @@ public class Node implements Serializable {
         return (getNodeValue().length() - 1) % 2 == 0 ? Player.HUMAN : Player.COMPUTER;
     }
 
+    /**
+     * Get the Next node with the played letter
+     *
+     * @param play the played letter
+     * @return the node
+     */
     public Node getTheNextNode(Character play) {
         for (Node childNode : getChildren()) {
             if (play == childNode.getLetter()) {

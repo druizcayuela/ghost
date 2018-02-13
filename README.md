@@ -11,12 +11,18 @@ The aim of the exercise is to present the best skills of the candidate, so, a co
 
 https://en.wikipedia.org/wiki/Ghost_(game)
 
-==================================================================================
+=================================================================================
 
 My work environment has been: IntelliJ IDE with SonarLint to QualityCode, JDK 9.0, Tomcat 9.0.4
 Frameworks used are: Spring MVC, Core, Context, Web and Test 3.2
 Spring Internalization with i18n.
 Perf4j, log4j, junit, jQuery, jstl, Maven 3.
+
+After deploying the war file in an application server you can access the game using this url as an entry point:
+
+http://127.0.0.1:8080/ghost
+
+=================================================================================
 
 Design patterns:
 - Visitor pattern: to separate the alogorithm from the Tree object structure on which it operates. Best way 
