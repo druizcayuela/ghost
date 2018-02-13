@@ -42,24 +42,24 @@ Handle error with @ExceptionHandler annotation of Spring, with the HTTPErrorHand
 
 - The leaf nodes are complete words (I can throw away words that have an initial subset that is also a complete word).
 
-- When I've built the complete tree and have all the leaf nodes, the leaf nodes with an odd-number of letters are goals for player human and the nodes with an even number of letters are goals for player computer
+- When I've built the complete tree and have all the leaf nodes, the leaf nodes with an odd-number of letters are goals for the computer and the nodes with an even number of letters are goals for human player
 
 - I go up a level; if all the nodes beneath a given node are goals for player x, that node also becomes a goal for player x; or if any of the nodes beneath a given node are goals for player x, and the node will be hit on player x's turn, that node becomes a goal for player x.
   
   If a single character node is a goal for player computer, player computer can always win the game.
 
-- So, first this tree is post-order traversed to find which nodes are goals for every player and then it is pre-order traversed again to prune it. All the nodes not logical from a computer player point of view are removed. These nodes would never be played
+- So, firstly, this tree is post-order traversed to find which nodes are goals for every player and then it is pre-order traversed again to prune it. All non-logical nodes from the point of view of the computer player are eliminated. These nodes would never be played
 
-- And the nodes which are winners for the logical computer, I will do a pruning except with the shortest way, to give a feeling of aggressive play
+- And all non-logical nodes which are winners for the logical computer, I will do a pruning except with the shortest way, to give a feeling of aggressive play
 
 - If the machine detects that it is likely to lose, I am using Alpha-beta pruning to select the best movement, according to the "play intelligently" as the exercise says. I am examining a tree upto depth of 3.
 
-- I am using the following letter selection consideration for the heuristics (only when machine thinks can be lose):
+- I am using the following letter selection consideration for the heuristics (only when machine thinks it can be lose):
   - Since the user plays first, the computer will win when the number of letters in the word are odd for the user to finish last.
-  - The chances of extending the game and choosing more words increases when words are lengthy.
+  - The chances of extending the game and choosing more words increases when words are longer.
   - The more winning nodes there are, the more likely the human will be to fail
 
-- Referring to the application web, all the users are going to share the same tree. They just have different pointers to different nodes of that game tree.
+- Relating to the application web, all the users are going to share the same tree. They just have different pointers to different nodes of the tree.
 
  
 
